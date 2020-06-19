@@ -312,7 +312,7 @@ URIHANDLER_FUNC(mod_expire_path_handler) {
 			switch(mod_expire_get_offset(srv, p, ds->value, &ts)) {
 			case 0:
 				/* access */
-				expires = (ts + srv->cur_ts);
+				expires = (ts + time(NULL));
 				break;
 			case 1:
 				/* modification */
